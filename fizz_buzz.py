@@ -10,3 +10,13 @@ def fizz_buzz(number):
     """
     if not isinstance(number, int) or number <= 0:
         return 'Invalid Argument'
+
+    else:
+        if (number % 3 == 0 and number % 5 == 0):
+            return 'fizzBuzz'
+        elif (number % 3 == 0):
+            return 'fizz'
+        elif (number % 5 == 0):
+            return 'buzz'
+        else:
+            return number
