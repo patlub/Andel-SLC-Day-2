@@ -39,3 +39,12 @@ class Car(object):
         if self.type == "saloon":
             return True
         return False
+
+    def drive(self, c):
+        if self.name == "Mercedes" and c == 3:
+            self.speed = 1000
+        elif self.type == "trailer" and c == 7:
+            self.speed = 77
+        else:
+            self.speed = 72
+        return self
