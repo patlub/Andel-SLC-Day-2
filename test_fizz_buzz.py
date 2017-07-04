@@ -3,9 +3,19 @@ from fizz_buzz import fizz_buzz
 
 
 class Test(unittest.TestCase):
-    """docstring for FizzBuzz"""
+    """Unit test cases for fizz_buzz"""
 
-    def test_fizz_1(self):
+    def test_non_int_arg_type(self):
+        self.assertEqual(fizz_buzz('hello'), 'Invalid Argument',
+                         msg='should return Invalid '
+                             'Argument for non integer args')
+
+    def test_arg_less_than_one(self):
+        self.assertEqual(fizz_buzz(0), 'Invalid Argument',
+                         msg='should return Invalid '
+                             'Argument for 0 and negatives')
+
+    def test_fizz(self):
         self.assertEqual(fizz_buzz(3), 'fizz',
                          msg='should return `fizz` for '
                              'number divisible by 3')
