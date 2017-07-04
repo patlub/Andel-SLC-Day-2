@@ -6,3 +6,13 @@ def data_type(arg):
          arg: Argument passed to function
 
     """
+    if arg is None:
+        return 'no value'
+
+    # check for string type
+    elif isinstance(arg, str):
+        return len(arg)
+
+    # check for Boolean type
+    elif isinstance(arg, bool):
+        return arg
