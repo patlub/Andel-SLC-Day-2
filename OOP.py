@@ -75,7 +75,7 @@ class Iphone(SmartPhone):
             return 'Only pairs with fellow Iphone'
         return 'Successfully Paired'
 
-# Iphone inherits from SmartPhone
+# Samsung inherits from SmartPhone
 class Samsung(SmartPhone):
 
     def __init__(self, imei, os, processor, memory, size, color, version, price):
