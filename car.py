@@ -19,3 +19,23 @@ class Car(object):
         self.model = model
         self.name = name
         self.speed = 0
+
+    @property
+    def num_of_doors(self):
+        """Return number of doors"""
+        if self.name == "Porshe" or self.name == "Koenigsegg":
+            return 2
+        return 4
+
+    @property
+    def num_of_wheels(self):
+        """Return number of wheels"""
+        if self.type != "trailer":
+            return 4
+        return 8
+
+    def is_saloon(self):
+        """Return car type"""
+        if self.type == "saloon":
+            return True
+        return False
