@@ -18,7 +18,7 @@ class Datatype(unittest.TestCase):
         self.assertEqual(data_type(115), 'more than 100')
 
     def test_argument_equal_to_100 (self):
-        self.assertEqual(data_type(115), 'more than 100')
+        self.assertEqual(data_type(100), 'equal than 100')
 
 
 if __name__ == '__main__':
