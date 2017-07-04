@@ -30,11 +30,26 @@ class OOPTestCase(unittest.TestCase):
                          'Installing facebook from the Google PlayStore')
 
     def test_phone_phone_start_camera(self):
-        self.assertEqual(self.iphone.start_camera(), 'Camera started in default mode')
+        self.assertEqual(self.iphone.start_camera(),
+                         'Camera started in default mode')
 
     def test_phone_phone_start_camera_in_mode(self):
-        self.assertEqual(self.iphone.start_camera('selfie'), 'Camera started in selfie mode')
+        self.assertEqual(self.iphone.start_camera('selfie'),
+                         'Camera started in selfie mode')
 
+    def test_iphone_blue_tooth_with_non_Iphone(self):
+        self.assertEqual(self.iphone.bluetooth(self.samsung),
+                         'Only pairs with fellow Iphone')
+
+    def test_iphone_blue_tooth_with_fellow_Iphone(self):
+        self.assertEqual(self.iphone.bluetooth(self.iphone),
+                         'Successfully Paired')
+
+    def test_samsung_blue_tooth_with_any_Iphone(self):
+        self.assertEqual(self.samsung.bluetooth(self.iphone),
+                         'Success. Pairs with any other phone')
+        self.assertEqual(self.samsung.bluetooth(self.samsung),
+                         'Success. Pairs with any other phone')
 
 
 if __name__ == '__main__':

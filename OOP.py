@@ -64,14 +64,16 @@ class Iphone(SmartPhone):
         else:
             return 'Camera started in default mode'
 
-    def bluetooth(self, Iphone):
+    def bluetooth(self, phone):
         """
         Implement abstract parent class method
 
         :param other_devices:
         :return:
         """
-        return 'Paired with only %s', Iphone
+        if not isinstance(phone, Iphone):
+            return 'Only pairs with fellow Iphone'
+        return 'Successfully Paired'
 
 # Iphone inherits from SmartPhone
 class Samsung(SmartPhone):
@@ -103,12 +105,12 @@ class Samsung(SmartPhone):
         else:
             return 'Camera started in default mode'
 
-    def bluetooth(self, *other_devices):
+    def bluetooth(self, another_devices):
         """
         Implement abstract parent class method
 
         :param other_devices:
         :return:
         """
-        return 'Paired with {}'.format(" ".join(other_devices))
+        return 'Success. Pairs with any other phone'
 
