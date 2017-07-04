@@ -2,6 +2,7 @@ import unittest
 from data_types import data_type
 
 class Datatype(unittest.TestCase):
+    """Unit test cases for data_type function"""
     def test_return_when_argument_is_none(self):
         self.assertEqual(data_type(None), 'no value',
                          msg='Should return no value for no arg')
