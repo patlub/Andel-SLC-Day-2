@@ -64,6 +64,45 @@ class Iphone(SmartPhone):
         else:
             return 'Camera started in default mode'
 
+    def bluetooth(self, Iphone):
+        """
+        Implement abstract parent class method
+
+        :param other_devices:
+        :return:
+        """
+        return 'Paired with only %s', Iphone
+
+# Iphone inherits from SmartPhone
+class Samsung(SmartPhone):
+
+    def __init__(self, imei, os, processor, memory, size, color, version, price):
+        super().__init__(imei, os, processor, memory) # Call to the super class constructor
+        self.size = size
+        self.color = color
+        self.version = version
+        self.price = price
+
+    def install_app(self, app_name):
+        """
+        Overrides install_app method from Parent class
+        :param app_name:
+        :return:
+        """
+        return 'Installing %s from the Google PlayStore' %app_name # Polymorphism
+
+    # Start camera in mode given, or default if none given
+    def start_camera(self, mode = None):
+        """
+        This depicts method overloading in Python.
+        :param mode:
+        :return:
+        """
+        if mode != None:
+            return 'Camera started in %s mode' %mode
+        else:
+            return 'Camera started in default mode'
+
     def bluetooth(self, *other_devices):
         """
         Implement abstract parent class method
