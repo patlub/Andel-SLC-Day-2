@@ -25,3 +25,15 @@ def data_type(arg):
             return 'less than 100'
         else:
             return 'more than 100'
+
+    # check for list type
+    elif isinstance(arg, list):
+        if len(arg) >= 3:
+            return arg[2]
+        else:
+            return None
+
+    # check for function type
+    elif callable(arg):
+        arg(True)
+        return True
