@@ -114,3 +114,18 @@ class Samsung(SmartPhone):
         """
         return 'Success. Pairs with any other phone'
 
+smartphone = SmartPhone('EJNJEEE87', 'ios7', 'intel', '8gb')
+iphone = Iphone('HSJSSK333', 'ios8', 'apple',
+                '4gb', '4inches', 'black', '9.0', 1000)
+samsung = Samsung('HSJSSK333', 'ios8', 'apple',
+                  '4gb', '4inches', 'black', '9.0', 1000)
+
+print(smartphone.install_app('facebook')) # facebook has been installed
+print(iphone.install_app('whatsapp')) # Installing whatsapp from the app store
+print(samsung.install_app('whatsapp')) # Installing whatsapp from the Google PlayStore
+
+print(iphone.bluetooth(samsung)) # Only pairs with fellow Iphone
+print(iphone.bluetooth(iphone)) # Successfully Paired
+
+print(samsung.start_camera()) # Camera started in default mode
+print(samsung.start_camera('selfie')) # Camera started in selfi mode
